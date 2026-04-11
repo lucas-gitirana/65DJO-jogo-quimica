@@ -1,0 +1,2 @@
+C:\Users\gitir\First VR\First VR 2026-03-20_22-30-04\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\gitir\First VR\First VR 2026-03-20_22-30-04\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

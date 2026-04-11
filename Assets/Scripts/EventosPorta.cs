@@ -1,0 +1,32 @@
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
+public class EventosPorta : MonoBehaviour
+{
+ private bool isOpen = false;
+ private HingeJoint hinge;
+ public TeleportationArea teleporte;
+ void Start()
+ {
+ hinge = GetComponent<HingeJoint>(); 
+ }
+ 
+void Update()
+ {
+ float angle = hinge.angle;
+ // abriu
+ if (!isOpen && angle <= -40)
+ {
+ isOpen = true;
+ teleporte.enabled = true;
+ } else
+ {
+ // Porta fechou
+ if (isOpen && angle > -40)
+ {
+ isOpen = false;
+ teleporte.enabled = false;
+ }
+ }
+ } 
+} 
