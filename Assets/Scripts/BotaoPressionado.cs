@@ -9,7 +9,6 @@ public class BotaoPressionado : MonoBehaviour
  }
  public void Pressionei()
  {
- // aqui vai a sua logica de acordo com o puzzle
- print("PRESS " + numBotao);
+ GamePuzzleEvents.RaiseLabButtonPressed(numBotao);
  }
 }
