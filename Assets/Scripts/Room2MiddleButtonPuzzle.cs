@@ -12,9 +12,22 @@ public class Room2MiddleButtonPuzzle : MonoBehaviour
     [SerializeField]
     private UnityEvent onSolved;
 
+    [Header("Som de vitória (opcional)")]
+    [SerializeField]
+    private AudioSource celebrationAudio;
+
+    [SerializeField]
+    private AudioClip celebrationClip;
+
     public bool IsSolved { get; private set; }
 
     private int _count;
+
+    private void Awake()
+    {
+        if (celebrationAudio == null)
+            TryGetComponent(out celebrationAudio);
+    }
 
     private void OnEnable()
     {
@@ -36,6 +49,10 @@ public class Room2MiddleButtonPuzzle : MonoBehaviour
             return;
 
         IsSolved = true;
+
+        if (celebrationClip != null && celebrationAudio != null)
+            celebrationAudio.PlayOneShot(celebrationClip);
+
         onSolved?.Invoke();
     }
 }
