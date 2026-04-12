@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9155157804912538098, guid: cbb3159864b0a1348ab992ae9813d64d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.29
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2129,7 +2133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.78
+      value: -2.85
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2499,7 +2503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DerramarLiquido
   anguloMin: 100
   tubeIndex: 2
-  initialTubeVolume: 1
+  initialTubeVolume: 0.25
   pourRateNormalized: 0.35
   tubeLiquidTransform: {fileID: 165814615}
   fullLiquidScaleY: 1
@@ -2633,6 +2637,10 @@ PrefabInstance:
     - target: {fileID: 5468512139057648038, guid: cbb3159864b0a1348ab992ae9813d64d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9155157804912538098, guid: cbb3159864b0a1348ab992ae9813d64d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2851,7 +2859,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DerramarLiquido
   anguloMin: 100
   tubeIndex: 0
-  initialTubeVolume: 1
+  initialTubeVolume: 0.5
   pourRateNormalized: 0.35
   tubeLiquidTransform: {fileID: 1688245253}
   fullLiquidScaleY: 1
@@ -3885,7 +3893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9155157804912538098, guid: cbb3159864b0a1348ab992ae9813d64d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.61
+      value: 0.29
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3924,7 +3932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4e11ea820df4144a80c5d1d3d605107, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.102
+      value: 1.064307
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4e11ea820df4144a80c5d1d3d605107, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4459,7 +4467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DerramarLiquido
   anguloMin: 100
   tubeIndex: 1
-  initialTubeVolume: 1
+  initialTubeVolume: 0.25
   pourRateNormalized: 0.35
   tubeLiquidTransform: {fileID: 1908408532}
   fullLiquidScaleY: 1
@@ -6372,7 +6380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4e11ea820df4144a80c5d1d3d605107, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.102
+      value: 1.064307
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4e11ea820df4144a80c5d1d3d605107, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6749,7 +6757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4e11ea820df4144a80c5d1d3d605107, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.102
+      value: 1.064307
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e4e11ea820df4144a80c5d1d3d605107, type: 3}
       propertyPath: m_LocalPosition.z
