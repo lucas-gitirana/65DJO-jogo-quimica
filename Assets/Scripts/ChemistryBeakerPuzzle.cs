@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
-/// RN04 – puzzle da primeira sala: exige que os três tubos tenham contribuído e o béquer atinja um nível mínimo.
+/// RN04 – puzzle da primeira sala: exige ordem correta de cores no béquer (Azul → Vermelho → Verde, ver BeakerLiquidSystem),
+/// os três tubos tenham contribuído e o béquer atinja um nível mínimo; ao resolver dispara o evento (ex.: destrancar porta + som).
 /// </summary>
 public class ChemistryBeakerPuzzle : MonoBehaviour
 {
@@ -52,6 +53,8 @@ public class ChemistryBeakerPuzzle : MonoBehaviour
         if (beaker.DistinctTubeContributionCount < 3)
             return;
         if (beaker.NormalizedFill < minFillToSolve)
+            return;
+        if (!beaker.IsFirstPourOrderCorrectForPuzzle())
             return;
 
         IsSolved = true;

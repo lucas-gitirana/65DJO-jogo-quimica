@@ -1,0 +1,1 @@
+C:\Users\warml\t1-jogo-quimica\65DJO-jogo-quimica\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\6f4x6x2h\obj\arm64-v8a

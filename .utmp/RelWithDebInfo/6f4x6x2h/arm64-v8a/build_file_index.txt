@@ -1,0 +1,2 @@
+C:\Users\warml\t1-jogo-quimica\65DJO-jogo-quimica\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+C:\Users\warml\t1-jogo-quimica\65DJO-jogo-quimica\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

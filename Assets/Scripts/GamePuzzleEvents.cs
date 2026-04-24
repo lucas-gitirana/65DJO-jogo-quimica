@@ -16,4 +16,10 @@ public static class GamePuzzleEvents
 
     public static void RaiseGameVictory() =>
         GameVictoryRequested?.Invoke();
+
+    /// <summary>Primeiro derrame fora da ordem esperada no béquer (RN04); UI pode mostrar game over e pausar.</summary>
+    public static event Action BeakerPourSequenceFailed;
+
+    public static void RaiseBeakerPourSequenceFailed() =>
+        BeakerPourSequenceFailed?.Invoke();
 }

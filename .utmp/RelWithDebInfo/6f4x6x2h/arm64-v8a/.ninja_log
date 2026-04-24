@@ -1,0 +1,19 @@
+# ninja log v5
+99	21810	7981627968014824	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	6da591c9edf517bf
+67	21831	7981627968014824	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	6cb442ac3c6ecd14
+184	22417	7981627974644115	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	89ec3f195130641e
+2	21834	7981627968421788	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	900ab951c289f467
+114	21867	7981627968975384	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	b5cdfed2c0a034aa
+22641	23222	7981627982697684	C:/Users/warml/t1-jogo-quimica/65DJO-jogo-quimica/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6f4x6x2h/obj/arm64-v8a/libgame.so	da9ac3736e158a77
+53	22039	7981627970773483	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	4e74f770bd332501
+82	22540	7981627975768954	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e505e0d0852eac23
+20	22641	7981627976793631	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	5198da48a29e3e
+139	9150	7981688790978429	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	6cb442ac3c6ecd14
+84	9175	7981688791179949	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	6da591c9edf517bf
+43	9185	7981688791490590	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	900ab951c289f467
+166	9241	7981688792081314	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	b5cdfed2c0a034aa
+61	9441	7981688794146121	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	4e74f770bd332501
+194	9979	7981688799383212	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	89ec3f195130641e
+153	10251	7981688802127179	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	e505e0d0852eac23
+124	10695	7981688806476621	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	5198da48a29e3e
+10696	11264	7981688812487326	C:/Users/warml/t1-jogo-quimica/65DJO-jogo-quimica/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6f4x6x2h/obj/arm64-v8a/libgame.so	da9ac3736e158a77

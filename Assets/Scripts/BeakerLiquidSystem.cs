@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -40,6 +41,10 @@ public class BeakerLiquidSystem : MonoBehaviour
     [SerializeField, Range(0f, 1f)]
     private float initialBeakerFill;
 
+    [Tooltip("RN04: ordem dos índices de tubo (0=Vermelho, 1=Azul, 2=Verde em tubeColors) para o primeiro derrame de cada cor. Padrão: Azul, Vermelho, Verde.")]
+    [SerializeField]
+    private int[] expectedFirstPourTubeOrder = { 1, 0, 2 };
+
     /// <summary>Volume já recebido no béquer [0,1].</summary>
     public float NormalizedFill => _fill;
 
@@ -62,6 +67,9 @@ public class BeakerLiquidSystem : MonoBehaviour
     }
 
     public event Action FillOrColorChanged;
+
+    private readonly List<int> _orderOfFirstTubePours = new List<int>(3);
+    private bool _wrongOrderNotified;
 
     private float _fill;
     private int _tubeMask;
@@ -105,6 +113,24 @@ public class BeakerLiquidSystem : MonoBehaviour
         float accepted = Mathf.Min(normalizedAmount, room);
         if (accepted <= 0f)
             return 0f;
+
+        bool firstFromThisTube = (_tubeMask & (1 << tubeIndex)) == 0;
+        if (firstFromThisTube)
+        {
+            if (expectedFirstPourTubeOrder != null && expectedFirstPourTubeOrder.Length > 0)
+            {
+                int step = _orderOfFirstTubePours.Count;
+                if (step < expectedFirstPourTubeOrder.Length &&
+                    tubeIndex != expectedFirstPourTubeOrder[step] &&
+                    !_wrongOrderNotified)
+                {
+                    _wrongOrderNotified = true;
+                    GamePuzzleEvents.RaiseBeakerPourSequenceFailed();
+                }
+            }
+
+            _orderOfFirstTubePours.Add(tubeIndex);
+        }
 
         _fill += accepted;
         _tubeMask |= 1 << tubeIndex;
@@ -171,5 +197,24 @@ public class BeakerLiquidSystem : MonoBehaviour
     {
         tubeIndex = Mathf.Clamp(tubeIndex, 0, 2);
         return tubeIndex < tubeColors.Length ? tubeColors[tubeIndex] : Color.white;
+    }
+
+    /// <summary>
+    /// True se a ordem dos primeiros derrames de cada tubo bater com <see cref="expectedFirstPourTubeOrder"/> (ex.: Azul→Vermelho→Verde).
+    /// Sem ordem configurada, devolve sempre true.
+    /// </summary>
+    public bool IsFirstPourOrderCorrectForPuzzle()
+    {
+        if (expectedFirstPourTubeOrder == null || expectedFirstPourTubeOrder.Length == 0)
+            return true;
+        if (_orderOfFirstTubePours.Count < expectedFirstPourTubeOrder.Length)
+            return false;
+        for (int i = 0; i < expectedFirstPourTubeOrder.Length; i++)
+        {
+            if (_orderOfFirstTubePours[i] != expectedFirstPourTubeOrder[i])
+                return false;
+        }
+
+        return true;
     }
 }
