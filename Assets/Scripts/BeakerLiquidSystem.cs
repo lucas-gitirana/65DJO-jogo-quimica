@@ -116,24 +116,24 @@ public class BeakerLiquidSystem : MonoBehaviour
 
         bool firstFromThisTube = (_tubeMask & (1 << tubeIndex)) == 0;
         if (firstFromThisTube)
-        {
-            if (expectedFirstPourTubeOrder != null && expectedFirstPourTubeOrder.Length > 0)
-            {
-                int step = _orderOfFirstTubePours.Count;
-                if (step < expectedFirstPourTubeOrder.Length &&
-                    tubeIndex != expectedFirstPourTubeOrder[step] &&
-                    !_wrongOrderNotified)
-                {
-                    _wrongOrderNotified = true;
-                    GamePuzzleEvents.RaiseBeakerPourSequenceFailed();
-                }
-            }
-
             _orderOfFirstTubePours.Add(tubeIndex);
-        }
 
         _fill += accepted;
         _tubeMask |= 1 << tubeIndex;
+
+        // Só valida game over depois que todos os tubos esperados já participaram
+        // e o béquer efetivamente terminou de encher.
+        if (!_wrongOrderNotified &&
+            expectedFirstPourTubeOrder != null &&
+            expectedFirstPourTubeOrder.Length > 0 &&
+            _orderOfFirstTubePours.Count >= expectedFirstPourTubeOrder.Length &&
+            _fill >= 0.999f &&
+            !IsFirstPourOrderCorrectForPuzzle())
+        {
+            _wrongOrderNotified = true;
+            GamePuzzleEvents.RaiseBeakerPourSequenceFailed();
+        }
+
         UpdateMixedColor();
         ApplyBeakerVisual();
         FillOrColorChanged?.Invoke();

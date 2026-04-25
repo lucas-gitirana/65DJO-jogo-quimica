@@ -52,4 +52,14 @@ public class PourAudioCoordinator : MonoBehaviour
         else
             _source.Stop();
     }
+
+    /// <summary>
+    /// Força parada imediata do loop de derramamento (ex.: ao exibir Game Over/Vitória).
+    /// </summary>
+    public void ForceStopAllPouring()
+    {
+        _activePourers.Clear();
+        if (_source != null && _source.isPlaying)
+            _source.Stop();
+    }
 }
